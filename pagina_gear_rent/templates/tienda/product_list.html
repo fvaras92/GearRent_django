@@ -1,8 +1,10 @@
+{% extends 'tienda/preamplificadores.html' %} {% block content %} {% for product in products %} {%load static %}
+
 <body>
-    {% extends 'tienda/preamplificadores.html' %} {% block content %} {% for product in products %}
+
     <div class="col">
         <div class="card shadow-sm">
-            <img src="img/preamplificador_1.jpg" class="bd-placeholder-img card-img-top">
+            <img src="{% static 'img/preamplificador_1.jpg'%}" class="bd-placeholder-img card-img-top">
             <div class="card-body">
                 <h3 class="fw-light">{{product.nombre}}</h3>
                 <h4 class="text-danger">{{product.precio}}</h4>

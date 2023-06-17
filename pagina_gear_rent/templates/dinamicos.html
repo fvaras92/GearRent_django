@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GearRent_dinamicos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="col-md-11">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/knob.png" alt="logo" class="d-inline-block align-text-top">
+                    <h1>Gear Rent</h1>
+                </a>
+            </div>
+
+            <div class="col-md-1">
+                <a>
+                    <button type="button" class="btn btn-primary" onclick="location.href='carro.html'">
+                            <img src="img/cart.png" alt="cart">
+                            Carrito
+                        </button>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Equipos
+                            </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="preamplificadores.html">Preamplificadores</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="compresores.html">Compresores</a></li>
+                            <li><a class="dropdown-item" href="ecualizadores.html">Equalizadores</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Microfonos
+                            </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+
+                            <li><a class="dropdown-item" href="condensadores.html">Condensador</a></li>
+                            <li><a class="dropdown-item" href="dinamicos.html">Dinamicos</a></li>
+                            <li><a class="dropdown-item" href="tubos.html">Tubos</a></li>
+                            <li><a class="dropdown-item" href="cinta.html">Cinta</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="accesorios.html">Accesorios</a></li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="packs.html">Packs</a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Dinamicos</h1>
+                    <p class="lead text-muted">aqui encontraras todo lo que necesitas</p>
+                </div>
+            </div>
+        </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_1.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">SHURE SM57 Micrófono Dinámico</h3>
+                                <h4 class="text-danger">$1.590</h4>
+                                <p class="card-text">Con su sonido brillante y nítido, y pico de presencia cuidadosamente modificado, el SM57 es ideal para el sonido en vivo y para grabaciones. Tiene un patrón...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">23 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_2.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">SHURE PGADRUMKIT5 Kit De 5 Micrófonos Para Baterían</h3>
+                                <h4 class="text-danger">$3.780</h4>
+                                <p class="card-text">El PGADRUMKIT5 incluye opciones de micrófono para reforzar bombos, tambores y timbales para la interpretación y grabación. Montables de tambor y...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">3 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_3.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">AKG DRUMSETSESS1 Drum Set Session I</h3>
+                                <h4 class="text-danger">$3.190</h4>
+                                <p class="card-text">Este es un juego de micrófonos de batería de alto rendimiento y el kit de inicio todo en uno ideal que ofrece una impresionante combinación...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">2 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_4.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">Sennheiser MD421 II Micrófono Dinámico Cardioide</h3>
+                                <h4 class="text-danger">$3.490</h4>
+                                <p class="card-text">¡Uno de los micrófonos más populares de Sennheiser! Es la versatilidad del MD 421 II lo que ha hecho que este micrófono sea tan aclamado. Su capacidad para...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">4 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_5.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">Sennheiser e906 Microfono Dinamico Instrumento</h3>
+                                <h4 class="text-danger">$1.990</h4>
+                                <p class="card-text">Un micrófono versátil para manejar baterías, percusión, amplificadores y otras fuentes instrumentales? Sennheiser tiene la respuesta con el...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">6 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_6.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">Shure PG52XLR Micrófono Dinamico para Bombo</h3>
+                                <h4 class="text-danger">$790</h4>
+                                <p class="card-text">Graba la batería y los amplificadores de bajo que funcionan como una mula con el micrófono dinámico Shure PG52. Está optimizado para una respuesta de...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">3 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/dinamico_7.jpg" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <h3 class="fw-light">Sennheiser e902 Micrófono Dinamico para Bombo</h3>
+                                <h4 class="text-danger">$2.400</h4>
+                                <p class="card-text">El e902 es un micrófono para instrumento dinámico con patrón polar cardioide especialmente diseñado para frecuencias de bajos profundos como la batería, amplificadores de bajo y tuba.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
+                                    </div>
+                                    <small class="text-muted">7 en Stock</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017–2023 Geif Limitada</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="privacidad.html">Privacidad</a></li>
+            <li class="list-inline-item"><a href="terminos.html">Términos</a></li>
+            <li class="list-inline-item"><a href="soporte.html">Soporte</a></li>
+        </ul>
+    </footer>
+
+    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
