@@ -4,7 +4,7 @@
 
     <div class="col">
         <div class="card shadow-sm">
-            <img src="{{product.imagen}}" class="bd-placeholder-img card-img-top">
+            <img src="{% static 'img/' %}{{product.imagen}}" class="bd-placeholder-img card-img-top">
             <div class="card-body">
                 <h3 class="fw-light">{{product.nombre}}</h3>
                 <h4 class="text-danger">{{product.precio}}</h4>
