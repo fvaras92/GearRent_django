@@ -8,6 +8,7 @@ class Product(models.Model):
     codigo = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
+    imagen= models.ImageField(blank=True, null= True)
     descripcion = models.TextField()
     precio = models.IntegerField()
     stock = models.IntegerField()

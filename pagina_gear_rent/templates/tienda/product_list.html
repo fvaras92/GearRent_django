@@ -4,11 +4,12 @@
 
     <div class="col">
         <div class="card shadow-sm">
-            <img src="{% static 'img/preamplificador_1.jpg'%}" class="bd-placeholder-img card-img-top">
+            <img src="{{product.imagen}}" class="bd-placeholder-img card-img-top">
             <div class="card-body">
                 <h3 class="fw-light">{{product.nombre}}</h3>
                 <h4 class="text-danger">{{product.precio}}</h4>
                 <p class="card-text">{{product.descripcion}}</p>
+                prueba: {{product.imagen}}
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='carro.html'">Agregar</button>
