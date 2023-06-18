@@ -4,7 +4,12 @@ from .models import Product
 
 
 def product_list(request):
-    products = Product.objects.all
+    tipo_prod = request.GET.get('tipoprod')
+    if tipo_prod:
+        products = Product.objects.filter(tipoprod=tipo_prod)
+    else:
+        products = Product.objects.all
+
     return render(request, 'tienda/product_list.html', {'products': products})
 
 

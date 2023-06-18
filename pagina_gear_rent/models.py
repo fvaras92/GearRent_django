@@ -6,6 +6,7 @@ from django.utils import timezone
 
 class Product(models.Model):
     codigo = models.CharField(max_length=100)
+    tipoprod = models.CharField(max_length=100, null=True)
     nombre = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
     imagen= models.ImageField(blank=True, null= True)

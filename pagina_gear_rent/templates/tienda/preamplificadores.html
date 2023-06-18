@@ -23,11 +23,11 @@
                             Equipos
                             </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="preamplificadores.html">Preamplificadores</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=preamplificador">Preamplificadores</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="compresores.html">Compresores</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=compresor">Compresores</a></li>
                             <li><a class="dropdown-item" href="ecualizadores.html">Equalizadores</a></li>
                         </ul>
                     </li>
