@@ -19,5 +19,8 @@ def index(request):
 def carrusel_view(request):
     # Lógica de la vista...
     return render(request, 'carrusel.html')
+def accesorios(request):
+    # Lógica de la vista
+    return render(request, 'accesorios.html')
 
 

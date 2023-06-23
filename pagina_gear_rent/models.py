@@ -11,7 +11,10 @@ class Product(models.Model):
     imagen= models.ImageField(blank=True, null= True)
     descripcion = models.TextField()
     precio = models.IntegerField()
+    oferta = models.IntegerField(blank=True, null= True)
     stock = models.IntegerField()
 
     def __str__(self):
         return self.nombre
+
+

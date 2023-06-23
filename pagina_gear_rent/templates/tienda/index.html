@@ -1,7 +1,58 @@
-{% extends 'tienda/base.html' %} {% block content1 %} {%load static %}
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GearRent_preamplificadores</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="{% static 'js/js.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+
+
+
+</head>
 
 <body>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="col-md-11">
+                <a class="navbar-brand" href="{% url 'carrusel' %}">
+                    <img src="{% static 'img/knob.png'%}" alt="logo" class="d-inline-block align-text-top">
+                    <h1>Gear Rent</h1>
+                </a>
+            </div>
+            <div class="col-md-1">
+                <a>
+                    <button type="button" class="btn btn-dark" onclick="boton()">
+                        <img src="{% static 'img/cat.png' %}" alt="cat">
+                    </button>
+                </a>
+            </div>
+
+            <h3 id="cat_fact" class="col-md-6 text-secondary">
+            </h3>
+
+            <div class="col-md-1">
+                <a>
+                    <button type="button" class="btn btn-primary" onclick="location.href='carro.html'">
+                            <img src="{% static 'img/cart.png'%}" alt="cart">
+                            Carrito
+                        </button>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -9,11 +60,11 @@
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
 
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'carrusel' %}">Home</a>
@@ -21,57 +72,56 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Equipos
-                            </a>
+                                Equipos
+                                </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=preamplificador" onclick="cambiarNombreSeccion(event,'Preamplificadores')">Preamplificadores</a></li>
+                            <a id="preamplificadores-link" class="dropdown-item" href="{% url 'product_list' %}?tipoprod=preamplificador" onclick="cambiarNombreSeccion(event)">Preamplificadores</a>
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=compresor" onclick="cambiarNombreSeccion(event, 'Compresores')">Compresores</a></li>
-                            <li><a class="dropdown-item" href="ecualizadores.html">Equalizadores</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=compresor" onclick="cambiarNombreSeccion(event)">Compresores</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=ecualizador">Equalizadores</a></li>
                         </ul>
                     </li>
 
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Microfonos
-                            </a>
+                                Microfonos
+                                </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
 
-                            <li><a class="dropdown-item" href="condensadores.html">Condensador</a></li>
-                            <li><a class="dropdown-item" href="dinamicos.html">Dinamicos</a></li>
-                            <li><a class="dropdown-item" href="tubos.html">Tubos</a></li>
-                            <li><a class="dropdown-item" href="cinta.html">Cinta</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=condensador">Condensador</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=dinamico">Dinamicos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=tubo">Tubos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'product_list' %}?tipoprod=cinta">Cinta</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="accesorios.html">Accesorios</a></li>
+                            <li><a class="dropdown-item" href="{% url 'accesorios' %}">Accesorios</a></li>
                         </ul>
                     </li>
 
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="packs.html">Packs</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'product_list' %}?tipoprod=pack">Packs</a>
                     </li>
 
                 </ul>
 
-                <form class="d-flex">
+                <form class="d-flex justify-content-end align-items-end align-form">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-primary" type="submit">Buscar</button>
-
                 </form>
             </div>
         </div>
     </nav>
-
     <main>
         <section class="text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light" id="titulo-seccion">Preamplificadores</h1>
+                    <h1 class="fw-light" id="titulo-seccion">Equipos</h1>
                     <p class="lead text-muted">aqui encontraras todo lo que necesitas</p>
                 </div>
             </div>
@@ -81,11 +131,22 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                    {% block content %} {% endblock %} {% block content2 %} {% endblock %}
+                    {% block content %} {% endblock %}
                 </div>
             </div>
         </div>
     </main>
-    {% endblock %}
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017–2023 Geif Limitada</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="privacidad.html">Privacidad</a></li>
+            <li class="list-inline-item"><a href="terminos.html">Términos</a></li>
+            <li class="list-inline-item"><a href="soporte.html">Soporte</a></li>
+        </ul>
+    </footer>
+
 
 </body>
+
+</html>

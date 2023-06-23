@@ -9,6 +9,8 @@ urlpatterns = [
     path('tienda', views.mi_vista, name='index'),
     path('pagina_gear_rent/index', views.index, name='index'),
     path('carrusel/', views.carrusel_view, name='carrusel'),
+    path('pagina_gear_rent/templates/accesorios/', views.accesorios, name='accesorios'),
+
     #path('pagina_gear_rent/', views.mi_vista, name='index'),
     
 

@@ -34,3 +34,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+
+
+// Espera a que se cargue el documento
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtiene el enlace del modal
+    var modalLink = document.getElementById("openModalProducto2");
+
+    // Escucha el evento de clic en el enlace
+    modalLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+        // Muestra el modal
+        var modal = document.getElementById("modalProducto2");
+        modal.style.display = "block";
+    });
+});
