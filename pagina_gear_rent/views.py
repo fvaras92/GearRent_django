@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Product
 from django.shortcuts import redirect, get_object_or_404
 from decimal import Decimal
-from .forms import RegistroForm
+from .forms import RegistroForm, ContactFormForm
 
 # Create your views here.
 
@@ -46,4 +46,19 @@ def soporte(request):
     return render(request, 'soporte.html')
 def terminos(request):
     return render(request, 'terminos.html')
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactFormForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Aquí puedes enviar notificaciones por correo electrónico si deseas
+            return redirect('contact_success')
+    else:
+        form = ContactFormForm()
+    
+    return render(request, 'contact.html', {'form': form})
+
+def contact_success(request):
+    return render(request, 'contact_success.html')
 

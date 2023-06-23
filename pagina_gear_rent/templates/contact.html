@@ -1,4 +1,4 @@
-{%load static %}
+ {%load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,17 +122,33 @@
             </div>
         </div>
     </nav>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
-        <main class="px-3">
-            <h1>Soporte</h1>
-            <p class="lead">Si necesitas ayuda con tu compra, contáctanos al correo <a href="{% url 'contact' %}">Contacto</a>.</p>
-            <h2>Contacto</h2>
-            <p class="lead">Si necesitas saber algo sobre tu pedido, puedes contactarnos al número <a href="tel:6006009876">600 600 9876</a>.</p>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.name.id_for_label }}" class="form-label">Nombre</label> {{ form.name }}
+            <div class="invalid-feedback">
+                {% if form.name.errors %} {{ form.name.errors|join:", " }} {% endif %}
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.email.id_for_label }}" class="form-label">Correo electrónico</label> {{ form.email }}
+            <div class="invalid-feedback">
+                {% if form.email.errors %} {{ form.email.errors|join:", " }} {% endif %}
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.message.id_for_label }}" class="form-label">Mensaje</label> {{ form.message }}
+            <div class="invalid-feedback">
+                {% if form.message.errors %} {{ form.message.errors|join:", " }} {% endif %}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
 
-        </main>
-    </div>
-
-
+    <!--<form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>-->
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2017–2023 Geif Limitada</p>
         <ul class="list-inline">
