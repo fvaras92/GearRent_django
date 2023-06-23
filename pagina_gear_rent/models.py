@@ -4,6 +4,8 @@ from django.utils import timezone
 from django.core.validators import EmailValidator
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -27,6 +29,16 @@ def validate_rut(value):
     if not rut_number.isdigit() or len(rut_number) < 7:
         raise ValidationError(_('Rut inválido.'))
 
+class CustomUser(AbstractUser):
+    
+    rut = models.CharField(max_length=12, validators=[validate_rut])
+    groups = models.ManyToManyField(Group, related_name='customuser_set')
+    user_permissions = models.ManyToManyField(Permission, related_name='customuser_set')
+
+
+    def __str__(self):
+        return self.username
+
 class Registro(models.Model):
     nombre_completo = models.CharField(max_length=100)
     email = models.EmailField()
@@ -34,7 +46,7 @@ class Registro(models.Model):
     rut = models.CharField(max_length=12, validators=[validate_rut])
 
 
-__all__ = ['Product', 'Registro']
+__all__ = ['Product', 'Registro', 'Carro', 'CustomUser']
 
 from django.db import models
 

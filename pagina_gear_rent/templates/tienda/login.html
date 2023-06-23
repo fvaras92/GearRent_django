@@ -122,25 +122,66 @@
             </div>
         </div>
     </nav>
-    <main>
-        <section class="text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light" id="titulo-seccion">Equipos</h1>
-                    <p class="lead text-muted">aqui encontraras todo lo que necesitas</p>
-                </div>
-            </div>
-        </section>
 
-        <div class="album py-5 bg-light">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                    {% block content %} {% endblock %} {% block content1 %} {% endblock %}
+    <nav class="text-center">
+
+
+        <main>
+            <div class="contenedor-principal">
+                <div class="caja-fija">
+                    <div class="caja.login">
+                        <h3>¿Tienes cuenta?</h3>
+                        <p>Logueate y Arrienda</p>
+                        <button id="btn-init"> Iniciar Sesion</button>
+                    </div>
+
+                    <div class="caja.registro">
+                        <h3> Has una cuenta totalmente </h3>
+                        <h3> Gratis</h3>
+                        <p>Registrate y Arrienda</p>
+                        <button id="btn-registro">Registrate</button>
+                    </div>
+
                 </div>
+
+                <div class="contenedor-doble">
+                    <!-- Formulario de inicio de sesión -->
+                    {% if form_type == 'login' %}
+                    <form action="{% url 'login' %}" method="post" class="form-login">
+                        {% csrf_token %}
+                        <h2>Iniciar Sesión</h2>
+                        {{ form.as_p }}
+                        <button type="submit">Entrar</button> {% if form.non_field_errors %}
+                        <div class="error-message">{{ form.non_field_errors }}</div>
+                        {% endif %}
+                    </form>
+                    {% endif %}
+
+                    <!-- Formulario de registro -->
+                    {% if form_type == 'registro' %}
+                    <form action="{% url 'registro' %}" method="post" class="form-registro">
+                        {% csrf_token %}
+                        <h2>Registrarse</h2>
+                        {{ form.as_p }}
+                        <button type="submit">Crear Usuario</button> {% if form.non_field_errors %}
+                        <div class="error-message">{{ form.non_field_errors }}</div>
+                        {% endif %}
+                    </form>
+                    {% endif %}
+
+                </div>
+
             </div>
-        </div>
+        </main>
+    </nav>
+
+
+    </div>
+    </div>
+    </div>
     </main>
+
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2017–2023 Geif Limitada</p>

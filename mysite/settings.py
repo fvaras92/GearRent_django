@@ -126,6 +126,15 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL= 'media/'
 MEDIA_ROOT= os.path.join(BASE_DIR / 'pagina_gear_rent/static/img')
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 
 # Default primary key field type

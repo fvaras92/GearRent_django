@@ -17,7 +17,9 @@ urlpatterns = [
     path('pagina_gear_rent/templates/soporte/', views.soporte, name='soporte'),
     path('pagina_gear_rent/templates/terminos/', views.terminos, name='terminos'),
     path('contact/', contact, name='contact'),
-    path('contact/success/', contact_success, name='contact_success')
+    path('contact/success/', contact_success, name='contact_success'),
+    path('login/', views.login_view, name='login'),
+    path('registro/', views.registro_view, name='registro'),
     #path('carro', views.Carro, name='carro'),
     #path('agregar_producto/<int:product_id>/', views.agregar_producto, name='agregar_producto'),
 
