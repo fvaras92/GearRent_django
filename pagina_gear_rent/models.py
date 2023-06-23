@@ -5,7 +5,6 @@ from django.utils import timezone
 # Create your models here.
 
 class Product(models.Model):
-    codigo = models.CharField(max_length=100)
     tipoprod = models.CharField(max_length=100, null=True)
     nombre = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)

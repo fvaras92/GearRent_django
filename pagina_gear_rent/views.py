@@ -5,11 +5,19 @@ from .models import Product
 
 def product_list(request):
     tipo_prod = request.GET.get('tipoprod')
-    if tipo_prod:
-        products = Product.objects.filter(tipoprod=tipo_prod)
-    else:
-        products = Product.objects.all
+    products = Product.objects.filter(tipoprod=tipo_prod)
+   
 
     return render(request, 'tienda/product_list.html', {'products': products})
+
+def mi_vista(request):
+    return render(request, 'tienda/carrusel.html')
+
+def index(request):
+    return render(request, 'tienda/index.html')
+
+def carrusel_view(request):
+    # Lógica de la vista...
+    return render(request, 'carrusel.html')
 
 

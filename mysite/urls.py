@@ -23,6 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pagina_gear_rent.urls')),
     path('pagina_gear_rent/', include('pagina_gear_rent.urls')),
+    path('pagina_gear_rent/tienda', include('pagina_gear_rent.urls')),
+    
+    
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
