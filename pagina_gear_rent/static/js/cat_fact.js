@@ -1,6 +1,9 @@
 function boton(){
-    for(var i = 0; i < 9; i++){
-        cat_fact();
+    for(var i = 0; i < 20; i++){
+        if(cat_fact()=true){
+            i=21;
+        }
+        
     }
 }
 
@@ -11,4 +14,5 @@ function cat_fact(){
         }
         console.log(data.status.verified);
     });
+    return data.status.verified;
 }

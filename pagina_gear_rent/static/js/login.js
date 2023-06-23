@@ -70,7 +70,7 @@ document.getElementById("btn-cuentaNueva").addEventListener("click", validarRegi
 function validarRegistro(event) {
     event.preventDefault();
   
-    var nombreInput = document.querySelector(".form-registro input[type='text'][placeholder='Nombre Completo']");
+    var nombreInput = document.querySelector(".form-registro input[type='text'][placeholder='Nombre Usuario']");
     var correoInput = document.getElementById("user-email");
     var contrasenaInput = document.querySelector(".form-registro input[type='password']");
     var nombre = nombreInput.value.trim();
@@ -79,7 +79,7 @@ function validarRegistro(event) {
   
     // Validar nombre completo
     if (nombre === "") {
-      mostrarError("Nombre completo no puede estar vacío.");
+      mostrarError("Nombre Usuario no puede estar vacío.");
       return;
     }
   
@@ -100,7 +100,7 @@ function validarRegistro(event) {
   }
   
   function validarCorreo(correo) {
-    var regex = /^[^\s@]+@[^\s@]+\.(com|es|cl|net)$/;
+    var regex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     return regex.test(correo);
   }
   

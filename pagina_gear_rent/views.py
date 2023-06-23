@@ -16,6 +16,9 @@ def mi_vista(request):
 def index(request):
     return render(request, 'tienda/index.html')
 
+def login(request):
+    return render(request, 'login.html')
+
 def carrusel_view(request):
     # Lógica de la vista...
     return render(request, 'carrusel.html')

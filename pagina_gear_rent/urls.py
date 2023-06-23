@@ -7,6 +7,7 @@ urlpatterns = [
     path('tienda', views.product_list, name='product_list'),
     path('tienda', views.mi_vista, name='carrusel'),
     path('tienda', views.mi_vista, name='index'),
+    path('pagina_gear_rent/templates/login/', views.login, name='login'),
     path('pagina_gear_rent/index', views.index, name='index'),
     path('carrusel/', views.carrusel_view, name='carrusel'),
     path('pagina_gear_rent/templates/accesorios/', views.accesorios, name='accesorios'),
