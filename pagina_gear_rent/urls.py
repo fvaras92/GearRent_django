@@ -11,6 +11,12 @@ urlpatterns = [
     path('pagina_gear_rent/index', views.index, name='index'),
     path('carrusel/', views.carrusel_view, name='carrusel'),
     path('pagina_gear_rent/templates/accesorios/', views.accesorios, name='accesorios'),
+    path('login', views.registro_view, name='login'),
+    path('pagina_gear_rent/templates/privacidad/', views.privacidad, name='privacidad'),
+    path('pagina_gear_rent/templates/soporte/', views.soporte, name='soporte'),
+    path('pagina_gear_rent/templates/terminos/', views.terminos, name='terminos'),
+    #path('carro', views.Carro, name='carro'),
+    #path('agregar_producto/<int:product_id>/', views.agregar_producto, name='agregar_producto'),
 
     #path('pagina_gear_rent/', views.mi_vista, name='index'),
     
