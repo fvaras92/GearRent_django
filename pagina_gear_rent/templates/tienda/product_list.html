@@ -4,8 +4,14 @@
         <img src="{% static 'img/' %}{{product.imagen}}" class="bd-placeholder-img card-img-top">
         <div class="card-body">
             <h3 class="fw-light">{{product.nombre}}</h3>
+            <h4 class="fw-light">Precio</h4>
             <h4 class="text-danger">{{product.precio}}</h4>
+            <h4 class="fw-light">oferta</h4>
+            {% if product.oferta == 0 %}
+            <h4 class="text-danger">Sin oferta</h4>
+            {% else %}
             <h4 class="text-danger">{{product.oferta}}</h4>
+            {% endif %}
             <p class="card-text">{{product.descripcion}}</p>
             <p class="card-text2">{{product.tipoprod}}</p>
             <div class="d-flex justify-content-between align-items-center">
