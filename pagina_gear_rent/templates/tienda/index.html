@@ -44,9 +44,9 @@
 
             <div class="col-md-1">
                 <a>
-                    <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'carrito' %}'">
+                    <a type="button" class="btn btn-primary" href="{% url 'carrito' %}">
                     <img src="{% static 'img/cart.png'%}" alt="cart"> Carrito
-                    </button>
+                    </a>
                 </a>
             </div>
 
@@ -116,7 +116,7 @@
                     <button class="btn btn-primary" type="submit">Buscar</button>
                 </form>
 
-                <button class="btn btn-primary" type="login" href="{% url 'login' %}">login</button>
+                <a class="btn btn-primary" type="login" href="{% url 'registro' %}">Login</a>
 
             </div>
         </div>
