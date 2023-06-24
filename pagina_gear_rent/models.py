@@ -45,6 +45,12 @@ class Registro(models.Model):
     contraseña = models.CharField(max_length=100)
     rut = models.CharField(max_length=12, validators=[validate_rut])
 
+class Carro(models.Model):
+    imagen= models.ImageField(blank=True, null= True, width_field=)
+    nombre_equipo = models.CharField(max_length=100)
+    cantidad = models.IntegerField()
+    precio = models.IntegerField()
+
 
 __all__ = ['Product', 'Registro', 'Carro', 'CustomUser']
 
@@ -69,5 +75,4 @@ def carrito(request):
         # Otros datos necesarios para la página del carrito
     }
     return render(request, 'carrito.html', context)
-
 
