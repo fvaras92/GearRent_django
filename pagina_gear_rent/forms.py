@@ -27,4 +27,5 @@ class ContactFormForm(forms.ModelForm):
 class RegistroForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'rut')
+        
+        print()
