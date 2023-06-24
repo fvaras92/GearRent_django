@@ -10,22 +10,32 @@ document.addEventListener('DOMContentLoaded', function() {
     let carrito = []; // Array para almacenar los productos agregados
 
     // Función para agregar un producto al carrito
-    function agregarProducto(productoId) {
-        // Realizar la solicitud AJAX al servidor (Django) para agregar el producto al carrito
-        fetch(`/agregar-producto/${productoId}/`, {
+    function agregarProducto() {
+        // Aquí puedes obtener los datos del producto que deseas agregar al carrito
+        // Puedes obtenerlos de elementos HTML o mediante alguna otra lógica de tu aplicación
+        const productId = 123; // Reemplaza 123 con el ID del producto seleccionado
+
+        // Realiza una llamada AJAX a tu vista de Django que maneja la acción de agregar al carrito existente
+        fetch('/ruta-de-la-vista-de-agregar-al-carrito-existente/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': getCookie('csrftoken'), // Obtener el token CSRF de las cookies
+                    'X-CSRFToken': '{{ csrf_token }}' // Asegúrate de incluir el token CSRF si es necesario
                 },
-                body: JSON.stringify({}), // Puedes enviar datos adicionales si es necesario
+                body: JSON.stringify({ product_id: productId }) // Envía el ID del producto seleccionado
             })
-            .then(response => response.json())
-            .then(data => {
-                // Actualizar la interfaz y el estado del carrito en respuesta a la respuesta del servidor
+            .then(response => {
+                if (response.ok) {
+                    // La solicitud fue exitosa, puedes realizar alguna acción adicional si es necesario
+                    console.log('Producto agregado al carrito existente');
+                } else {
+                    // La solicitud falló, puedes mostrar un mensaje de error o realizar alguna otra acción
+                    console.log('Error al agregar el producto al carrito existente');
+                }
             })
             .catch(error => {
-                console.error('Error al agregar el producto:', error);
+                // Ocurrió un error en la solicitud, puedes mostrar un mensaje de error o realizar alguna otra acción
+                console.log('Error en la solicitud: ' + error);
             });
     }
 
