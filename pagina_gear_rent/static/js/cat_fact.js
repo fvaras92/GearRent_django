@@ -1,9 +1,6 @@
 function boton(){
     for(var i = 0; i < 20; i++){
-        if(cat_fact()=true){
-            i=21;
-        }
-        
+        cat_fact() 
     }
 }
 
@@ -12,7 +9,5 @@ function cat_fact(){
         if(data.status.verified){
             document.getElementById("cat_fact").innerHTML=data.text;
         }
-        console.log(data.status.verified);
-    });
-    return data.status.verified;
+    })
 }
