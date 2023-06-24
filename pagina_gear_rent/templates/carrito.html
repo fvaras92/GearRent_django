@@ -13,6 +13,8 @@
     <script src="{% static 'js/titles.js' %}"></script>
     <script src="{% static 'js/cat_fact.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <!-- Dentro del head de carrito.html -->
+    <script src="{% static 'js/carrito.js' %}"></script>
 
 
 
@@ -122,27 +124,17 @@
             </div>
         </div>
     </nav>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
-        <main class="px-3">
-            <h1>Política de Privacidad</h1>
-            <p class="lead">La política de privacidad de un sitio web contiene las normas acerca de cómo se recogen y gestionan los datos personales de las personas que acceden y hacen uso de una página o sitio web (usuarias), así como acerca de las cookies utilizadas
-                por el mismo. Este documento, en lo que no contraviene la legislación chilena, está adaptado al Reglamento Europeo de Protección de Datos (RGPD). Se consideran datos personales los relativos a cualquier información concerniente a personas
-                naturales, identificadas o identificables. Se consideran cookies los archivos que contienen una pequeña cantidad de información recolectada por un sitio web determinado respecto de las personas usuarias, y que es almacenada en el navegador
-                utilizado por cada usuaria, quedando disponible para ser consultado por el sitio web cuando la usuaria acceda a él. Este documento contiene las menciones o referencias legales que servirán para regular las condiciones en las que el sitio
-                o página web recoge, gestiona y retiene ("trata") los datos personales de las personas usuarias que acceden, navegan y utilizan el sitio o página web. Este documento también describe los derechos de las personas usuarias (ej. a saber si
-                el sitio web está tratando sus datos, derecho a que sus datos sean corregidos o eliminados, cuando corresponda) y las obligaciones del sitio web en relación con el tratamiento de sus datos personales. Para el caso en que se desee elaborar
-                un documento que contenga todas las normas que regulan la interacción de las personas usuarias con el contenido que la misma página web pone a disposición, con los productos y/o servicios ofrecidos en ella, y con la identificación de las
-                personas responsables del sitio, se encuentra disponible y mejor adaptado a dicha circunstancia el modelo de términos y condiciones general de uso. De todas maneras, las políticas de privacidad de un sitio web forman parte de sus términos
-                y condiciones generales de uso, por lo cual en ambos modelos, términos y condiciones y política de privacidad, se hace referencia al otro, de modo que las personas usuarias puedan acceder y conocer la totalidad de normas que les afectan
-                al hacer uso de un sitio web determinado.</p>
-            <br>
-            <h2>Normativa aplicable</h2>
-            <p class="lead">Estas políticas de privacidad han sido elaboradas y se rigen por el ordenamiento jurídico chileno vigente, especialmente por el artículo 19 N° 4 de la Constitución Política y por la Ley de Protección de Datos Personales. También se han tenido
-                en consideración las normas del Reglamento de Protección de Datos de la Unión Europea.</p>
-            <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Aprender más</a>
-            </p>
-        </main>
+    <!-- Estructura básica del carrito -->
+    <div id="carrito">
+        <h2>Carrito de compras</h2>
+        <!-- Mostrar los productos agregados -->
+        <ul id="lista-productos">
+            <!-- Aquí se agregarán los productos dinámicamente con JavaScript -->
+        </ul>
+        <h3>Total: <span id="total"></span></h3>
+        <!-- Botones para agregar y eliminar productos -->
+        <button id="btn-agregar">Agregar Producto</button>
+        <button id="btn-eliminar">Eliminar Producto</button>
     </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
