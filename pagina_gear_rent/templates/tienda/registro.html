@@ -46,9 +46,8 @@
 
             <div class="col-md-1">
                 <a>
-                    <a type="button" class="btn btn-primary" onclick="location.href='carro.html'">
-                            <img src="{% static 'img/cart.png'%}" alt="cart">
-                            Carrito
+                    <a type="button" class="btn btn-primary" href="{% url 'carrito' %}">
+                        <img src="{% static 'img/cart.png'%}" alt="cart"> Carrito
                     </a>
                 </a>
             </div>
@@ -161,7 +160,7 @@
                     {% endif %}
 
 
-                    
+
                 </div>
 
             </div>

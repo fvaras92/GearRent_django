@@ -13,7 +13,6 @@
     <script src="{% static 'js/titles.js' %}"></script>
     <script src="{% static 'js/cat_fact.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
-    <!-- Dentro del head de carrito.html -->
     <script src="{% static 'js/carrito.js' %}"></script>
 
 
@@ -46,10 +45,9 @@
 
             <div class="col-md-1">
                 <a>
-                    <button type="button" class="btn btn-primary" onclick="location.href='carro.html'">
-                            <img src="{% static 'img/cart.png'%}" alt="cart">
-                            Carrito
-                        </button>
+                    <a type="button" class="btn btn-primary" href="{% url 'carrito' %}">
+                        <img src="{% static 'img/cart.png'%}" alt="cart"> Carrito
+                    </a>
                 </a>
             </div>
 
