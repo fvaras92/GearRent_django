@@ -46,7 +46,7 @@ class Registro(models.Model):
     rut = models.CharField(max_length=12, validators=[validate_rut])
 
 class Carro(models.Model):
-    imagen= models.ImageField(blank=True, null= True, width_field=)
+    imagen= models.ImageField(blank=True, null= True)
     nombre_equipo = models.CharField(max_length=100)
     cantidad = models.IntegerField()
     precio = models.IntegerField()
