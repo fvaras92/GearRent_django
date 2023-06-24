@@ -149,16 +149,17 @@
 
                 <div class="contenedor-doble">
                     <!-- Formulario de inicio de sesión -->
-                    {% if registro %}
-                    <form action="{% url 'registro' %}" method="post" class="form-login">
+                    {% if form_type == 'registro' %}
+                    <form action="{% url 'registro' %}" method="post" class="form-registro">
                         {% csrf_token %}
-                        <h2>Iniciar Sesión</h2>
+                        <h2>Registrarse</h2>
                         {{ form.as_p }}
-                        <button type="submit">Entrar</button> {% if form.non_field_errors %}
+                        <button type="submit">Crear Usuario</button> {% if form.non_field_errors %}
                         <div class="error-message">{{ form.non_field_errors }}</div>
                         {% endif %}
                     </form>
                     {% endif %}
+
 
                     
                 </div>
