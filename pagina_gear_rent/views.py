@@ -93,3 +93,59 @@ def contact(request):
 def contact_success(request):
     return render(request, 'contact_success.html')
 
+
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from .models import Product
+
+def carrito(request):
+    productos = Product.objects.all()
+
+    # Obtener los datos del carrito del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+    total = 0
+
+    # Actualizar el total y el stock de cada producto en el carrito
+    for producto_id, cantidad in carrito.items():
+        producto = Product.objects.get(id=producto_id)
+        producto.stock -= cantidad
+        producto.save()
+        total += producto.precio * cantidad
+
+    # Guardar el total en la sesión
+    request.session['total_carrito'] = total
+
+    # Renderizar la página del carrito con los productos y el total
+    context = {
+        'productos': productos,
+        'total': total,
+    }
+    return render(request, 'carrito.html', context)
+from django.http import JsonResponse
+
+def agregar_producto(request, producto_id):
+    # Obtener los datos del carrito del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+    
+    # Agregar el producto al carrito
+    carrito[producto_id] = carrito.get(producto_id, 0) + 1
+    
+    # Guardar los datos actualizados del carrito en la sesión
+    request.session['carrito'] = carrito
+    
+    # Devolver una respuesta JSON con los datos actualizados del carrito
+    return JsonResponse({'carrito': carrito})
+
+def eliminar_producto(request, producto_id):
+    # Obtener los datos del carrito del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+    
+    # Eliminar el producto del carrito si existe
+    if producto_id in carrito:
+        del carrito[producto_id]
+    
+    # Guardar los datos actualizados del carrito en la sesión
+    request.session['carrito'] = carrito
+    
+    # Devolver una respuesta JSON con los datos actualizados del carrito
+    return JsonResponse({'carrito': carrito})

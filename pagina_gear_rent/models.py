@@ -58,5 +58,16 @@ class ContactForm(models.Model):
     def __str__(self):
         return self.name
 
+from django.shortcuts import render, redirect
+from .models import Product
+
+def carrito(request):
+    productos = Product.objects.all()
+    # Lógica para manejar las operaciones del carrito (agregar, eliminar, calcular total)
+    context = {
+        'productos': productos,
+        # Otros datos necesarios para la página del carrito
+    }
+    return render(request, 'carrito.html', context)
 
 
