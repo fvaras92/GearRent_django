@@ -20,10 +20,16 @@ urlpatterns = [
     path('contact/success/', contact_success, name='contact_success'),
     path('login/', views.login_view, name='login'),
     path('registro/', views.registro_view, name='registro'),
+    path('carrito/', views.carrito, name='carrito'),
     #path('carro', views.Carro, name='carro'),
     #path('agregar_producto/<int:product_id>/', views.agregar_producto, name='agregar_producto'),
 
     #path('pagina_gear_rent/', views.mi_vista, name='index'),
+    # Ruta para agregar un producto al carrito
+    path('agregar-producto/<int:producto_id>/', views.agregar_producto, name='agregar_producto'),
+
+    # Ruta para eliminar un producto del carrito
+    path('eliminar-producto/<int:producto_id>/', views.eliminar_producto, name='eliminar_producto'),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

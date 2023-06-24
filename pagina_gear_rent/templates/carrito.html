@@ -13,6 +13,8 @@
     <script src="{% static 'js/titles.js' %}"></script>
     <script src="{% static 'js/cat_fact.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <!-- Dentro del head de carrito.html -->
+    <script src="{% static 'js/carrito.js' %}"></script>
 
 
 
@@ -25,7 +27,7 @@
 
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <div class="col-md-1">
+            <div class="col-md-11">
                 <a class="navbar-brand" href="{% url 'carrusel' %}">
                     <img src="{% static 'img/knob.png'%}" alt="logo" class="d-inline-block align-text-top">
                     <h1>Gear Rent</h1>
@@ -44,9 +46,10 @@
 
             <div class="col-md-1">
                 <a>
-                    <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'carrito' %}'">
-                    <img src="{% static 'img/cart.png'%}" alt="cart"> Carrito
-                    </button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='carro.html'">
+                            <img src="{% static 'img/cart.png'%}" alt="cart">
+                            Carrito
+                        </button>
                 </a>
             </div>
 
@@ -121,25 +124,18 @@
             </div>
         </div>
     </nav>
-    <main>
-        <section class="text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light" id="titulo-seccion">Equipos</h1>
-                    <p class="lead text-muted">aqui encontraras todo lo que necesitas</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="album py-5 bg-light">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                    {% block content %} {% endblock %} {% block content1 %} {% endblock %}
-                </div>
-            </div>
-        </div>
-    </main>
+    <!-- Estructura básica del carrito -->
+    <div id="carrito">
+        <h2>Carrito de compras</h2>
+        <!-- Mostrar los productos agregados -->
+        <ul id="lista-productos">
+            <!-- Aquí se agregarán los productos dinámicamente con JavaScript -->
+        </ul>
+        <h3>Total: <span id="total"></span></h3>
+        <!-- Botones para agregar y eliminar productos -->
+        <button id="btn-agregar">Agregar Producto</button>
+        <button id="btn-eliminar">Eliminar Producto</button>
+    </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2017–2023 Geif Limitada</p>
@@ -149,7 +145,6 @@
             <li class="list-inline-item"><a href="{% url 'soporte' %}">Soporte</a></li>
         </ul>
     </footer>
-
 
 </body>
 
