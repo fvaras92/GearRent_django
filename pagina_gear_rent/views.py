@@ -55,8 +55,8 @@ def registro_view(request):
             form.save()
             print("El formulario es válido")            
             # Autenticación del usuario recién registrado
-            username = form.cleaned_data['email']
-            password = form.cleaned_data['contraseña']
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
