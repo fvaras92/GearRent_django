@@ -37,7 +37,7 @@ def login_view(request):
                 form.add_error(None, "Credenciales inválidas. Verifica tu correo y contraseña.")
     else:
         form = LoginForm()
-    return render(request, 'tienda/login.html', {'form': form, 'form_type': form_type})
+    return render(request, 'login.html', {'form': form, 'form_type': form_type})
 
 def carrusel_view(request):
     # Lógica de la vista...
